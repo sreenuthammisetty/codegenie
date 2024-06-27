@@ -1,0 +1,7 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<force:recordData aura:id="record"
+                      recordId="{! v.recordId }"
+                      fields="Id" />
+    
+    <lightning:button label="Delete" onclick="{! c.handleDelete }" />
+</aura:component>

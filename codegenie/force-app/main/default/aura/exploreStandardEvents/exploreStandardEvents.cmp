@@ -1,0 +1,8 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <!-- 
+      Application/Component Events Vs Standard Out Of The Box Events[OOTB]
+     -->
+    <force:recordEdit aura:id="edit" recordId="{! v.recordId }"/>
+    <lightning:button label="Save" onclick="{!c.save}"/>
+    
+</aura:component>

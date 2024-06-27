@@ -1,0 +1,8 @@
+<aura:component extensible="true">
+    
+    <aura:attribute name="message" type="string"
+                    default="This is default message"/>
+    
+    Message is : {!v.message}
+	
+</aura:component>

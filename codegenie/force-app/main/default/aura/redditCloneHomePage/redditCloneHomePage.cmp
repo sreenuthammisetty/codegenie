@@ -1,0 +1,39 @@
+<aura:component controller="redditCloneHomePageController" implements="force:appHostable">
+    <aura:attribute name="allPosts" type="post__c[]" />
+    <aura:attribute name="past" type="Object"/>
+    <aura:attribute name="future" type="Object"/>
+    
+    
+    <aura:handler name="init" value="{!this}" action="{!c.fetchAllRedditPosts}" />
+    
+    <div>
+        <lightning:button label="Submit a Link" variant="brand"/>
+        <lightning:button label="Upload a Image" />
+        
+    </div>
+    <aura:iteration items="{!v.allPosts}" var="post">
+        <lightning:card footer="Post Created Date">
+            
+            <div class="upAndDownVote">
+                <lightning:icon iconName="utility:chevronup" alternativeText="upvote" class="upvoteCustom"/>
+                <lightning:icon iconName="utility:chevrondown" alternativeText="upvote" class="downvoteCustom" /> 
+            </div>
+            <div class="postBodyAndLinks">
+                <p class="slds-p-horizontal_small">
+                    <strong>
+                        <div onclick="{!c.naviagateToThePost}" data-id="{!post.Id}">
+                            <a>{!post.title__c}</a>
+                        </div>
+                    </strong>
+                    <lightning:formattedRichText value="{!post.podyBody__c}"/>
+                </p>
+                <a>122 comments</a> - <a>share</a> - <a>delete</a>
+            </div>
+            
+            <aura:set attribute="footer">
+                <lightning:formattedDateTime value="{! post.CreatedDate }" year="2-digit" month="short" day="2-digit" weekday="long"/>
+            </aura:set>
+        </lightning:card>
+        
+    </aura:iteration>
+</aura:component>

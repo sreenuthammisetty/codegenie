@@ -1,0 +1,7 @@
+<aura:component implements="c:exploreAuraInterface">
+	<aura:attribute name="booleanFlag"
+                    type="boolean"
+                    default="false" />
+    
+    {!v.booleanFlag}
+</aura:component>

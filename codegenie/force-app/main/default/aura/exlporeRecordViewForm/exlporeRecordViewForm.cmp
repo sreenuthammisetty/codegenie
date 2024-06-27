@@ -1,0 +1,35 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    Demonstrate RecordViewForm/RecordEditForm
+    
+    <!-- 
+    <force:recordData />
+
+    <lightning:recordViewForm /> 
+       <lightning:recordEditForm /> 
+     -->
+    
+    <lightning:recordViewForm objectApiName ="Account"
+                              recordId="{! v.recordId }">
+        <div>
+            <lightning:outputField fieldName="Name" />
+            <lightning:outputField fieldName="Industry" />
+            <lightning:outputField fieldName="Rating" />
+        </div>
+    </lightning:recordViewForm>
+    
+    <lightning:recordEditForm objectApiName="Account"
+                              onload="{! c.handleOnload }"
+                              onsubmit="{! c.handleSubmit }"
+                              onsuccess="{! c.handleSuccess }"
+                              onerror="{! c.handleError }"
+                              recordId="{! v.recordId }">
+        <div>
+            <lightning:inputField fieldName="Name" />
+            <lightning:inputField fieldName="Industry" />
+            <lightning:inputField fieldName="Rating" />
+            
+            <lightning:button label="save" type="submit" />
+        </div>
+    </lightning:recordEditForm>
+</aura:component>

@@ -1,0 +1,52 @@
+<apex:page controller="testVueJsPageController">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <div id="app-4">
+        <ol>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+            </li>
+            </ol>
+            </div>
+            
+            <script>
+                var app4 = new Vue({
+                    el: '#app-4',
+                    data: {
+                        todos: [
+                            { text: 'Learn JavaScript' },
+                            { text: 'Learn Vue' },
+                            { text: 'Build something awesome' }
+                        ]
+                    },
+                    
+                    methods: {
+                        getJokes: function () {
+                          Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.testVueJsPageController.getAccount}',
+                                function(result, event){
+                                    if (event.status) {
+                                        // Get DOM IDs for HTML and Visualforce elements like this
+                                        document.getElementById('remoteAcctId').innerHTML = result.Id
+                                        document.getElementById(
+                                            "{!$Component.block.blockSection.secondItem.acctNumEmployees}"
+                                            ).innerHTML = result.NumberOfEmployees;
+                                    } else if (event.type === 'exception') {
+                                        document.getElementById("responseErrors").innerHTML = 
+                                            event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                                    } else {
+                                        document.getElementById("responseErrors").innerHTML = event.message;
+                                    }
+                                }, 
+                                {escape: true}
+                            );
+                        }
+                      },
+                    
+                    
+                })   
+                
+                
+                
+                
+			</script>
+</apex:page>

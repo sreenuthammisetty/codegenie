@@ -1,0 +1,64 @@
+<aura:component controller="showContactsListCon">
+	
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+	
+    <aura:attribute name="contactList" type="contact[]" />
+    
+    <div class="slds-page-header">
+        <div class="slds-media">
+            <div class="slds-media__figure">
+                <span class="slds-icon_container slds-icon-standard-opportunity" title="Description of icon when needed">
+                    <lightning:icon iconName="action:add_contact" />
+                </span>
+            </div>
+            <div class="slds-media__body">
+            	<h1 class="slds-page-header__title slds-truncate slds-align-middle" title="Rohde Corp - 80,000 Widgets">Contacts List</h1>
+            	<p class="slds-text-body_small slds-line-height_reset">List of all contacts in Lightning System</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+    <thead>
+        <tr class="slds-text-title_caps">
+            <th scope="col">
+                <div class="slds-truncate" title="Contact Name">Contact Name</div>
+            </th>
+            <th scope="col">
+                <div class="slds-truncate" title="Record ID">ID</div>
+            </th>
+            <th scope="col">
+                <div class="slds-truncate" title="Contact Email">Contact Email</div>
+            </th>
+            
+           
+        </tr>
+    </thead>
+    <tbody>
+        
+        <aura:iteration items="{!v.contactList}" var="cList">
+            <tr>
+            
+                <td data-label="{!cList.Name}">
+                    <div class="slds-truncate" title="{!cList.Name}">{!cList.Name}</div>
+                </td>
+                <td data-label="{!cList.ID}">
+                    <div class="slds-truncate" title="{!cList.Id}">{!cList.Id}</div>
+                </td>
+                
+                <td data-label="{!cList.Email}">
+                    <div class="slds-truncate" title="{!cList.Name}"><a href="javascript:void(0);">{!cList.Email}</a></div>
+                </td>
+        	</tr>
+           
+    
+    	</aura:iteration>
+        
+        
+    </tbody>
+</table>
+    
+    
+</aura:component>

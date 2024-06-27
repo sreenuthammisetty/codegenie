@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="message" type="String" default="Button is not clicked"/>
+    
+    <aura:handler name="findoutEvents" event="c:exploreEventItem" action="{!c.handleChildOneEvent}" />
+	
+    <c:exploreEventsChildOne />
+    <c:exploreEventsChildTwo message="{!v.message}"/>
+    {!v.message}
+</aura:component>

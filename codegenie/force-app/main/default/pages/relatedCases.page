@@ -1,0 +1,22 @@
+<apex:page controller="relatedCasesController"
+           tabStyle="Case"
+           action="{!relatedCasesControllerMethod}"
+           lightningStylesheets="true">
+   
+    <apex:slds />
+    <apex:sectionHeader title="Related Cases" subtitle="For this account" />
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="New"  />
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockTable value="{!relatedCases}" var="rc">
+                <apex:column value="{!rc.CaseNumber }"/>
+                <apex:column value="{!rc.Subject}"/>
+                <apex:column value="{!rc.Status}"/>
+                
+            </apex:pageBlockTable>
+        </apex:pageBlock>   
+    </apex:form>
+</apex:page>

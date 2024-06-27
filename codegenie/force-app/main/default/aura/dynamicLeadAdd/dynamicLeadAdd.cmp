@@ -1,0 +1,16 @@
+<aura:component >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+  
+    <aura:handler name="leadAdd" event="c:dynaLeadAdd" action="{!c.addNewLead}" />
+    <aura:attribute name="leadList" type="Lead[]"/> 
+    
+    
+
+    
+    <aura:iteration items="{!v.leadList}" var="item" indexVar="index">
+		<c:dynaLeadAddRow lead="{!item}" rowIndex="{!index}" />
+	</aura:iteration>
+    
+    <c:dynaLeadSave />
+</aura:component>

@@ -1,0 +1,28 @@
+<aura:component >
+	
+    
+    <aura:attribute name="message" type="string" default="Default Value" />
+    {!v.message}
+    
+    <aura:attribute name="flagMessage" type="boolean" default="False" />
+    
+    <aura:attribute name="exploreIteration" type="List" default="['This',
+                                                                 'is',
+                                                                 'Krishna',
+                                                                 'Teja']" />
+    
+	<aura:if isTrue="{!v.flagMessage}">
+    	<p> If its True, this message shows up</p>
+        <aura:set attribute="else">
+          <p> This is shown because it entered else loop</p>
+        </aura:set>
+	</aura:if> 
+    
+    
+    <aura:iteration items="{!v.exploreIteration}" var="msg">
+        <aura:text value="{!msg}" />
+    
+    </aura:iteration> 
+                    
+    
+</aura:component>

@@ -1,0 +1,7 @@
+<aura:component >
+    
+    <aura:attribute name="message" type="string" />
+    <c:exploreComponentThree message="{! v.message }"/>
+    
+    {! v.message }
+</aura:component>

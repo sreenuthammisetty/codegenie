@@ -1,0 +1,5 @@
+<aura:component controller="redditClonePostDetailsController">
+    <aura:attribute name="recordIdFromCmp" type="Id" />
+    Hello
+    <aura:handler name="init" value="{!this}" action="{!c.fetchPostWithComments}" />
+</aura:component>

@@ -1,0 +1,12 @@
+<aura:component >
+
+    
+    <aura:attribute name="message" type="String" default="HEY!!! Salesforce Casts" />
+    
+    {! v.message }
+    
+    <c:exploreComponentOne message="{! v.message }"/>
+    
+    <lightning:button label="Click Me" onclick="{! c.handleClick }" />
+
+</aura:component>

@@ -1,0 +1,3 @@
+<aura:component controller="ExploreApexCallController">
+    <lightning:button label="Call me" onclick="{! c.handleClick }" />
+</aura:component>

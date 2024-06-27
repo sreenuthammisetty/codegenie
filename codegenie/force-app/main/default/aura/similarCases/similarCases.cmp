@@ -1,0 +1,37 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId"
+                controller="similarCasesController">
+    <aura:attribute name="case" type="Case" />
+    <aura:attribute name="similarCases" type="Case[]" />
+    
+    <aura:attribute name="remoteRecordId" type="Id" />
+	<aura:attribute name="showDialog" type="String" default="false" />
+    
+   
+	<force:recordData aura:id="caseRecord"
+                      recordId="{!v.recordId}"
+                      targetRecord="{!v.case}"
+                      recordUpdated="{!c.doInit}"
+                      layoutType="FULL" />
+  	<div class="Similar Cases">
+	    <lightning:card iconName="standard:case" 
+                        title="Similar Cases" >
+        	<div class="slds-p-left_medium slds-p-right_medium">
+            	<ul class="slds-list_vertical slds-has-dividers_top-space">
+                	<aura:iteration items="{!v.similarCases}" var="sc">
+                    	<li class="slds-list__item">
+                            <c:similarCase caseId="{!sc.Id}"
+                                           remoteRecordId="{!v.remoteRecordId}"
+					                       showDialog="{!v.showDialog}"/>
+                        </li>
+                    </aura:iteration>
+                </ul>
+            </div>
+            <lightning:spinner aura:id="spinner" variant="brand" size="large" />
+        </lightning:card>
+        
+    </div>
+    
+    <c:similarCaseEdit remoteRecordId="{!v.remoteRecordId}"
+                       showDialog="{!v.showDialog}"/>
+    
+</aura:component>

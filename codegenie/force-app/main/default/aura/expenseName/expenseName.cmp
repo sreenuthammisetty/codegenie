@@ -1,0 +1,19 @@
+<aura:component >
+
+
+	<aura:attribute name="expName" type="String" />    
+    
+    <aura:registerEvent name="createFirstStep" type="c:expenseNameUpdate"/>
+    
+
+	
+	<lightning:input aura:id="expFormName" label="Expense Name"
+                     name="expFormName"
+                     value="{!v.expName}"
+                     required="true"
+                     placeholder="Stationary"/>
+    
+    <lightning:button label="Next Step" onclick="{!c.firstStep}" />
+                    
+                                    
+</aura:component>

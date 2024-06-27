@@ -1,0 +1,13 @@
+<aura:component controller="ExpensesWizard">
+	    
+    
+    <aura:attribute name="expClient" type="string" />
+    
+    
+    <lightning:input aura:id="expFormClient" label="Client"
+                     name="expFormClient"
+                     value="{!v.expClient}"
+                     placeholder="ABC co." />
+    
+
+</aura:component>

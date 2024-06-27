@@ -1,0 +1,4 @@
+<aura:component extends="c:exploreAuraSetTags">
+    <aura:set attribute="message" value="This is Aura Set Tags"/>
+	
+</aura:component>

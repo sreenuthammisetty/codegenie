@@ -1,0 +1,11 @@
+<aura:component >
+    <!-- Component Event Registering -->
+    <aura:registerEvent name="findoutEvents" type="c:exploreEventItem" />
+    
+    
+    <lightning:button label="Click Me" variant="brand" onclick="{!c.clickMeHandler}" />
+    
+    <lightning:button label="App Button" variant="brand" onclick="{!c.applicationEventHandler}" />
+    
+    
+</aura:component>

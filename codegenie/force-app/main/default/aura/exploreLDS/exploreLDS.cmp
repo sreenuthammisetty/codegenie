@@ -1,0 +1,27 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <aura:attribute name="accountRecord" type="Account" />
+    <aura:attribute name="accountTargetRecord" type="Account" />
+    <aura:attribute name="errors" type="String" />
+    <force:recordData aura:id="record"
+                      recordId="{! v.recordId }"
+                      mode="VIEW" 
+                      layoutType="FULL"
+                      fields="AccountNumber"
+                      targetRecord="{! v.accountTargetRecord }"
+                      targetError="{! v.errors }"/>
+    
+    <div>
+        <lightning:input value="{! v.accountRecord.Id }" />
+        <lightning:input value="{! v.accountRecord.Name }" />
+        <lightning:input value="{! v.accountRecord.Rating }" />
+        <lightning:input value="{! v.accountRecord.Industry }" />
+        
+        
+        <lightning:button label="Update" onclick="{! c.handleUpdate }" />
+    </div>
+    <aura:if isTrue="{! not(empty(v.errors)) }">
+        {! v.errors }
+    </aura:if>
+    
+</aura:component>

@@ -1,0 +1,49 @@
+<aura:component controller="customLeadController">
+     
+     <!-- PAGE HEADER -->	
+	 <lightning:layout class="slds-page-header slds-page-header--object-home">
+        <lightning:layoutItem >
+            <lightning:icon iconName="standard:lead" 
+                            alternativeText="Lead Form"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="horizontal-small">
+            <div class="page-section page-header">
+                <h1 class="slds-text-heading--label">Lead</h1>
+                <h2 class="slds-text-heading--medium">New Lead</h2>
+            </div>
+        </lightning:layoutItem>
+     </lightning:layout>
+    
+    <aura:attribute name="newLead" type="Lead"
+                    default="{ 'sobjectType': 'Lead',
+                             'LastName': '',
+                             'Company': '',
+                             'Email': '',
+                             'MobilePhone': '' }"/>
+    
+    <!-- Create New Lead Form -->
+    
+    <form class="slds-form--stacked">
+    	<lightning:input aura:id="leadform" label="Lead Name"
+                         name="leadname"
+                         value="{!v.newLead.LastName}"
+                         required="true" />
+        <lightning:input aura:id="leadform" label="Company"
+                         name="company"
+                         value="{!v.newLead.Company}" />
+        
+        <lightning:input type="email" aura:id="leadform" label="Email"
+                         name="email"
+                         value="{!v.newLead.Email}" />
+        
+        <lightning:input type="tel" aura:id="leadform" label="Mobile"
+                         name="mobile"
+                         value="{!v.newLead.MobilePhone}" />
+        
+        <lightning:button label="Create Lead"
+                          variant="brand"
+                          onclick="{!c.clickCreate}" />
+    
+    </form>
+    
+</aura:component>

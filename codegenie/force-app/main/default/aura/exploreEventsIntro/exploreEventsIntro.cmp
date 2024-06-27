@@ -1,0 +1,8 @@
+<aura:component >
+    <!--
+      Step 1. Create an Event
+      Step 2. Register the Event (Broadcaster/Source Component)
+      Step 3. Fire the Event 
+      Step 4. Handle the Event (Receiver Component)
+     -->
+</aura:component>

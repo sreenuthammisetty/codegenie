@@ -1,0 +1,7 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <lightning:recordForm aura:id="record"
+                          objectApiName="Account"
+                          mode="edit"
+                          layoutType="Full"
+                          onsuccess="{! c.handleSuccess }"/>
+</aura:component>

@@ -1,0 +1,18 @@
+<aura:component >
+    
+    <aura:registerEvent name="leadAdd" type="c:dynaLeadAdd" />
+    
+    <aura:attribute name="lead" type="Lead" />
+    <aura:attribute name="rowIndex" type="String"/>
+    
+	<lightning:input aura:id="leadName" label="Name"
+                     value="{!v.lead.Name}"
+                     name="lead" />
+    
+    <lightning:input aura:id="leadEmail" label="Email"
+                     value="{!v.lead.email}"
+                     name="leadEmail" />
+    
+    <lightning:button label="add" onclick="{!c.addNew}"/>
+    
+</aura:component>

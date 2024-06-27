@@ -1,0 +1,43 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+   
+   <!-- https://kkteja-dev-ed.lightning.force.com/one/one.app#/
+			sObject/00Q7F000005DhBbUAK/view -->
+    
+    <aura:attribute name="recordId" type="String" />    
+    <aura:attribute name="targetRec" type="Object" />
+    <aura:attribute name="simpleRec" type="Object" />
+    <aura:attribute name="error" type="String" />
+    
+    <force:recordData aura:id="record"
+                      recordId="{!v.recordId}"
+					  layoutType="FULL"
+                      fields="Id, Name, Email, Company" 
+                      mode="EDIT"
+                      targetRecord="{!v.targetRec}"
+                      targetFields="{!v.simpleRec}"
+                      targetError="{!v.error}"/>
+    
+    <div class="Record Details">
+    	<lightning:card iconName="standard:lead" title="{!v.simpleRec.Name}">
+            <div class="slds-p-horizontal--small">
+            	
+                	<lightning:input value="{!v.simpleRec.Email}" />
+                
+                <lightning:input value="{!v.simpleRec.Company}" /> <br />   
+               		<lightning:button variant="brand" label="Save" 
+                              onclick="{!c.handleSaveRecord}" />	
+            </div>
+            
+            
+            
+        </lightning:card>
+    </div>
+    
+	<aura:if isTrue="{!not(empty(v.error))}">
+    	<div class="error">
+            {!v.error}
+        </div>
+    </aura:if>
+    
+    
+</aura:component>

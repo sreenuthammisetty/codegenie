@@ -1,0 +1,64 @@
+<aura:component controller="customLeadSearch">
+    
+    <aura:attribute name="searchQuery" type="string" />
+    
+    <aura:attribute name="leadsSearchList" type="Lead[]" />
+    <div class="slds-page-header">
+        <div class="slds-media">
+            <div class="slds-media__figure">
+                <span class="slds-icon_container slds-icon-standard-opportunity" title="Description of icon when needed">
+                    <lightning:icon iconName="standard:lead_list" />
+                </span>
+            </div>
+            <div class="slds-media__body">
+            	<h1 class="slds-page-header__title slds-truncate slds-align-middle" title="Rohde Corp - 80,000 Widgets">Custom Lead Search</h1>
+            	<p class="slds-text-body_small slds-line-height_reset">Search Redefined</p>
+            </div>
+        </div>
+    </div>
+    
+    <lightning:input type="search" label="Search" name="search" 
+                     value="{!v.searchQuery}"/>
+    <lightning:button variant="brand" label="Submit" onclick="{!c.searchLeads}" />
+
+    
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+    <thead>
+        <tr class="slds-text-title_caps">
+            <th scope="col">
+                <div class="slds-truncate" title="Lead Name">Lead Name</div>
+            </th>
+            <th scope="col">
+                <div class="slds-truncate" title="Lead ID">Lead ID</div>
+            </th>
+            <th scope="col">
+                <div class="slds-truncate" title="Mobile Phone">Mobile Phone</div>
+            </th>
+            <th scope="col">
+                <div class="slds-truncate" title="Email">Email</div>
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <aura:iteration items="{!v.leadsSearchList}" var="lList">
+            <tr>
+                <th scope="row" data-label="Lead Name">
+                    <div class="slds-truncate" title="Cloudhub">{!lList.Name}</div>
+                </th>
+                <td data-label="Lead ID">
+                    <div class="slds-truncate" title="{!lList.Id}">{!lList.Id}</div>
+                </td>
+                <td data-label="Mobile Phone">
+                    <div class="slds-truncate" title="{!lList.MobilePhone}">{!lList.MobilePhone}</div>
+                </td>
+                <td data-label="Email">
+                    <div class="slds-truncate" title="{!lList.Email}"><a href="javascript:void(0);">{!lList.Email}</a></div>
+                </td>
+            </tr>
+        </aura:iteration>
+    </tbody>
+</table>
+    
+    
+</aura:component>

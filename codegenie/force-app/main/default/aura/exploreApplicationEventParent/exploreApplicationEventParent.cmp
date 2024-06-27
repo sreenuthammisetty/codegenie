@@ -1,0 +1,10 @@
+<aura:component >
+    
+    <aura:attribute name="message" type="String" />
+    
+    <c:exploreApplicationEventChildOne />
+    <c:exploreApplicationEventChildTwo message="{!v.message}"/>
+    
+    
+    {!v.message}
+</aura:component>

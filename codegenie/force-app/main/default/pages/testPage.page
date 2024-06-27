@@ -1,0 +1,11 @@
+<apex:page >
+    
+    
+    <p>
+        Hello Lightning Framework !!
+    </p>
+    
+    {!$User.UIThemeDisplayed}
+    {!$User.UITheme}
+    
+</apex:page>
