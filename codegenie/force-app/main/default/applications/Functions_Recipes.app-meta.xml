@@ -14,8 +14,6 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Functions Recipes</label>
     <navType>Standard</navType>
-    <tabs>Functions</tabs>
-    <tabs>Invocation</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Functions_Recipes_UtilityBar</utilityBar>
 </CustomApplication>

@@ -1,9 +1,0 @@
-<aura:component controller="ExpensesWizard">
-	
-  	
-
-    
-	<c:expenseHeader />
-    <c:expenseName />
-    <c:expenseAmount />
-</aura:component>

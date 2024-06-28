@@ -1,5 +1,0 @@
-<apex:page controller="ExploreSOQLQueries">
-    {! c.Id }
-    {! c.Name }
-   {! c.Position__r.Name }
-</apex:page>
