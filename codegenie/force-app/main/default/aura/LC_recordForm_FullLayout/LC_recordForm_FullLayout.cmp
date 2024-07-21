@@ -1,0 +1,12 @@
+<aura:component >
+    <lightning:layout>
+        <lightning:layoutItem size="2">
+            <lightning:recordForm
+                                  recordId="001dM000007dNaiQAE"
+                                  objectApiName="Account"
+                                  layoutType="Full"
+                                  mode="view"
+                                  />
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>
