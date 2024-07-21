@@ -1,0 +1,5 @@
+<aura:component controller="CL_LC_Controller">
+    <aura:attribute name="acc" type="Account"/>
+    <aura:handler name="init" value="{!this}" action="{!c.showme}" />
+    {!v.acc.Name}
+</aura:component>
