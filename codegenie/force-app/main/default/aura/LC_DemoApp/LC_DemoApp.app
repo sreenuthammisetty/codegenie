@@ -1,3 +1,3 @@
 <aura:application extends="force:slds">
-    <c:LC_recordForm_RecordId/>
+    <c:LC_InterfaceWithAttribute/>
 </aura:application>

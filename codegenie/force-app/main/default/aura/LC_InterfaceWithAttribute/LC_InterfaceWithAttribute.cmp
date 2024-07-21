@@ -1,0 +1,6 @@
+<aura:component implements="c:LI_InterfaceWithAttribute">
+    <lightning:card title="Interface Example">
+    	Name: {!v.empname} <p></p>
+        Age: {!v.age}
+    </lightning:card>
+</aura:component>
