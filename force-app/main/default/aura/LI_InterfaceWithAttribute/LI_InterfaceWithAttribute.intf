@@ -1,0 +1,4 @@
+<aura:interface description="Interface template with 2 attributes">
+	<aura:attribute name="empname" type="String" default="Salesforce Kid"/>
+    <aura:attribute name="age" type="Integer" default="35"/>
+</aura:interface>

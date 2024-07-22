@@ -1,0 +1,21 @@
+<apex:page >
+    <apex:includeLightning />
+    <div id="two">
+        
+    </div>
+    
+    <script>
+    	$Lightning.use(
+        	"c:LA_LtngOutApp",
+            function(){
+            	$Lightning.createComponent(
+                    "c:LC_InterfaceWithAttribute",
+                    { },
+                    "two",
+                    function(cmp){}
+                );
+            }
+        );
+    </script>
+    
+</apex:page>
