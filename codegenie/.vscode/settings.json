@@ -8,5 +8,5 @@
   "testing.showCoverageInExplorer": true,
   "testing.coverageToolbarEnabled": true,
   "salesforcedx-vscode-core.retrieve-test-code-coverage": true,
-  "salesforcedx-vscode-core.detectConflictsAtSync": true
+  "salesforcedx-vscode-core.detectConflictsAtSync": false
 }
