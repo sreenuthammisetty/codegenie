@@ -1,0 +1,18 @@
+<template>
+    <template if:true={accounts}>
+        <template for:each={accounts}
+                for:item="acc">
+            <p key={acc.id}>
+                Name:{acc.Name} 
+                Phone:{acc.Phone} 
+                Rating:{acc.Rating} 
+                Industry:{acc.Industry}
+            </p>
+        </template>
+        <template if:true={errorhappened}>
+            The data cannot be retrieved.
+            Please refresh this screen again.
+            Error: {errorhappened}
+        </template>
+    </template>
+</template>
