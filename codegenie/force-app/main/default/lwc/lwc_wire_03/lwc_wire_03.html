@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Create Account">
+        <lightning-input label="Enter Account Name" onchange={aname}></lightning-input>
+        <lightning-input label="Enter Account AnnualRevenue" onchange={arevenue}></lightning-input>
+        <lightning-input label="Enter Account Rating" onchange={arating}></lightning-input>
+        <lightning-input label="Enter Account Industry" onchange={aindus}></lightning-input>
+        
+        <lightning-button label="Save" variant="brand" onclick={createaccount}></lightning-button>
+    </lightning-card>
+</template>
